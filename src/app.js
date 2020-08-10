@@ -1,15 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config');
 
 const app = express();
 const router = express.Router();
 
-mongoose.connect('mongodb+srv://apinode:willian01@cluster0.kcqfz.azure.mongodb.net');
+mongoose.connect(config.connectionString);
 
 // CARREGAR MODELS
 const Product = require('./models/product-model');
-const Customer = require('./models/customer-model')
+const Customer = require('./models/customer-model');
 const Order = require('./models/order-model');
 
 
