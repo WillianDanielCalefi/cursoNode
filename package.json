@@ -24,7 +24,7 @@
     "guid": "0.0.12",
     "http": "0.0.1-security",
     "mongoose": "^5.9.26",
-    "pg": "^6.1.0"
+    "pg": "^6.1.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
