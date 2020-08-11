@@ -43,13 +43,51 @@ exports.authenticate = async(req, res, next) => {
         return;
         }
 
-        const token = await authService.generateToken({ 
+        const token = await authService.generateToken({
+            id: customer._id,
             email: customer.email,
             name: customer.name 
         });
 
         res.status(201).send({
             token: token,
+            data: {
+                email: customer.email,
+                name: customer.name
+            }
+        });
+    }
+    catch (e){
+        res.status(500).send({
+            message: 'Falha ao processar sua requisição'
+        });
+    }
+};
+
+exports.refreshToken = async(req, res, next) => {
+    try{
+        const token = req.body.token || req.query.token || req.headers['x-access-token'];
+        const data = await authService.decodeToken(token);
+
+        console.log(data.id);
+        
+        const customer = await repository.getById(data.id);
+
+        if(!customer){
+                res.status(404).send({
+                    message: 'Cliente não encontrado!'
+            });
+            return;
+        }
+
+        const tokendata = await authService.generateToken({
+            id: customer._id,
+            email: customer.email,
+            name: customer.name 
+        });
+
+        res.status(201).send({
+            token: tokendata,
             data: {
                 email: customer.email,
                 name: customer.name

@@ -80,7 +80,7 @@ exports.post = async(req, res, next) => {
                 price: req.body.price,
                 active: true,
                 tags: req.body.tags,
-                title: filename
+                image: filename
             })
             res.status(201).send({ 
                 message: 'Produto cadastrado com sucesso!'
