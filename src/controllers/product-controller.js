@@ -73,6 +73,8 @@ exports.post = async(req, res, next) => {
                 }
             });
 
+            console.log(req.body);
+
             await repository.create({
                 title: req.body.title,
                 slug: req.body.slug,

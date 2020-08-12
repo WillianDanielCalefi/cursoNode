@@ -3,7 +3,7 @@ global.EMAIL_TMPL = 'Olá, <strong>{0}</strong>, seja bem vindo ao curso de API 
 
 module.exports= {
     // connectionString: 'mongodb+srv://apinode:willian01@cluster0.kcqfz.azure.mongodb.net',
-    connectionString: 'mongodb://127.0.0.1:56347/b90ca0f5-7e89-4510-9879-6de2f8e30750?',
+    connectionString: 'mongodb://127.0.0.1:63006/7d9e19fb-93c9-47f6-87b2-2b56b8ec1394?',
     sendgridKey: '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',
     containerConnectionString: 'TBD'
 }
