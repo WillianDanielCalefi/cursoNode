@@ -28,7 +28,7 @@
     "md5": "^2.3.0",
     "mongoose": "^5.9.26",
     "mysql": "^2.18.1",
-    "pg": "^6.1.0",
+    "pg": "^6.1.6",
     "sendgrid": "^2.0.0"
   },
   "devDependencies": {
